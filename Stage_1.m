@@ -36,7 +36,7 @@ for n = 1: N
     true_gain(n) = input(sprintf('Enter the true gain of intruder %d:',n));
 end
 Ps = input('Enter the transmit Power for Sensing at Base Station: ');
-Sigma_2 = input('Enter the Noise Power of AWGN: ');
+sigma2 = input('Enter the Noise Power of AWGN: ');
 Sth = input('Enter the Maximum Threshold Power of the intruders: ');
 delta = input('Enter the value of Minimum Criteria for Binary Search Method: ');
 Z = input('Enter the Number of Noise Samples: ');
@@ -175,8 +175,7 @@ if feasible_solution_found
         theta_samples(k,:) = linspace(xi1(k),xi2(k),Qtheta);
     end
     %% Save Outputs for Stage-2
-    save('Algo1_Output.mat','Nt','Sth','dist','lambda','sigma2','Pmax',...
-        'Angle_Info','theta_samples');
+    save('Algo1_Output.mat','Nt','Sth','dist','lambda','sigma2','Pmax','Angle_Info','theta_samples');
 end
 
 % Capon Spectrum plot
@@ -190,7 +189,7 @@ if ~isempty(P_final)
 
     % Power graph
     figure;
-    plot(thetha_test,10*log10(P/max(P)),'LineWidth',2);
+    plot(thetha_test,10*log10(P_final/max(P_final)),'LineWidth',2);
     grid on;
     xlabel('Angle (deg)');
     ylabel('Normalized Power (dB)');
