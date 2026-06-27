@@ -1,27 +1,19 @@
-# ISAC Multi-Intruder Detection and Jamming Framework
+# ISAC Single-Intruder Detection and Jamming Framework
 
-This repository contains a MATLAB implementation of a sensing-aware jamming framework for multi-intruder detection and interception in Integrated Sensing and Communication (ISAC) systems.
+This repository contains a MATLAB implementation of a sensing-aware jamming framework for single-intruder detection and interception in Integrated Sensing and Communication (ISAC) systems.
 
-The project is divided into three major algorithms:
-
- Stage-1: Multi-intruder detection using Capon beamforming and CRB-based uncertainty interval generation.
- Stage-2: Robust beamforming optimization to satisfy worst-case Jamming-to-Noise Ratio (JNR) constraints under transmit power limitations.
- Stage-3: Intruder scheduling scheme that identifies feasible jamming groups and sequentially intercepts all detected intruders when simultaneous jamming is not possible.
- 
 Features
 
-- Multi-target direction-of-arrival estimation
-- CRB-based uncertainty modeling
+- Single-target direction-of-arrival (DoA) estimation
+- Capon beamforming based sensing
+- CAML channel gain estimation
+- CRB-based uncertainty interval generation
 - Robust beamforming design
-- JNR-constrained jamming optimization
-- Multi-round intruder scheduling
-- MATLAB-based simulation framework
+- Binary search optimization for sensing beam allocation
 
 Repository Structure
 
-- "Stage_1.m" – Detection and angle estimation
-- "Stage_2.m" – Robust beamforming optimization
-- "Stage_3.m" – Intruder scheduling
+- "Single_Intruder_Case.m" - Complete implementation of the single-intruder robust sensing and jamming algorithm
 - "steering_vector.m" – Utility function for antenna array steering vectors
 
 Author
